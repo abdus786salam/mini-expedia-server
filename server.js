@@ -1,6 +1,6 @@
 const port=process.env.PORT || 4000
-const path=requie("path")
-const jsonServer=requie("json-server")
+const path=require("path")
+const jsonServer=require("json-server")
 const server=jsonServer.create()
 const router=jsonServer.router(path.join(_dirname,"db.json"))
 const middlewares=jsonServer.defaults()
