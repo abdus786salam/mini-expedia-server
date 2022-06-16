@@ -1,0 +1,10 @@
+const port=process.env.PORT || 4000
+const path=requie("path")
+const jsonServer=requie("json-server")
+const server=jsonServer.create()
+const router=jsonServer.router(path.join(_dirname,"db.json"))
+const middlewares=jsonServer.defaults()
+server.use(middlewares)
+server.use(jsonServer.bodyParser)
+server.use("/api",router)
+server.listen(PORT,()=>console.log("Running on port 4000"))
